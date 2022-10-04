@@ -1,10 +1,18 @@
-const productos= [
+/* const productos= [
     {codigo:1,tipo:"gpu",marca:"MSI",Modelo:"GTX3060",Precio:120000},
     {codigo:2,tipo:"monitor",marca:"MSI",Modelo:"27 pulgadas 2ms",Precio:80000},
     {codigo:3,tipo:"gpu",marca:"ASUS",Modelo:"GTX3080",Precio:250000},
     {codigo:4,tipo:"monitor",marca:"Samsung",Modelo:"30 pulgadas curvo",Precio:60000}
 
-];
+]; */
+const productos=[]
+fetch("./javaSript/data.json")
+.then((res)=>res.json)
+.then((data)=>{
+    data.forEach(el=>
+        productos.push(el))
+    
+})
 
 function nuevoPorducto(codigo,tipo,marca,modelo,precio){
 
